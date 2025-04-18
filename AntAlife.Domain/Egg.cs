@@ -13,8 +13,9 @@ namespace AntAlife.Domain
             HatchTime = random.Next(70, 100);
         }
 
-        public Egg(int hp, int x, int y, ItemType itemType) : base(hp, x, y, itemType)
+        public Egg(Random random, int x, int y, int hp = 40, ItemType itemType = ItemType.Egg) : base(hp, x, y, itemType)
         {
+            Hp = random.Next(10, hp);
             HatchTime = 100;
         }
     }

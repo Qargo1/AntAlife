@@ -2,6 +2,6 @@
 {
     public enum CellType
     {
-        Soil, StoneBlock, Tunnel, Chamber, Exit, Flooded
+        Soil, Ground, StoneBlock, Tunnel, Chamber, Exit, Flooded, 
     }
 }

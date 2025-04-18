@@ -82,5 +82,15 @@
     <ItemGroup>
         <None Include="App.config"/>
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\AntAlife.Domain\AntAlife.Domain.csproj">
+        <Project>{df7b09c9-bc72-4aed-a5d2-89b4e1e233f6}</Project>
+        <Name>AntAlife.Domain</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\AntAlife.Logic\AntAlife.Logic.csproj">
+        <Project>{2e2a68b8-4128-4f7f-aa34-f92547fba336}</Project>
+        <Name>AntAlife.Logic</Name>
+      </ProjectReference>
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>

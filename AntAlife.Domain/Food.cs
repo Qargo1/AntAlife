@@ -9,7 +9,7 @@ namespace AntAlife.Domain
         {
         }
 
-        public Food(int hp, int x, int y, ItemType itemType) : base(hp, x, y, itemType)
+        public Food(int x, int y, ItemType itemType = ItemType.Food, int hp = 100) : base(hp, x, y, itemType)
         {
         }
     }

@@ -11,42 +11,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9049a9b1-0429-4d71-bf02-8f8a1c679f0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.AntAlife/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.AntAlife/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.AntAlife/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.AntAlife/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/Ant.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/AntEnemy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/AntType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/BeneficialCreature.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/Cell.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/CellType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/Egg.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/Enemy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/EnemyType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/Entity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/EntityState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/Food.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/FoodType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/ICell.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/IEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/Item.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/ItemType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/NeutralCreature.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/World.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Logic/Move.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Logic/WorldUpdater.cs" afterDir="false" />
+    <list default="true" id="9049a9b1-0429-4d71-bf02-8f8a1c679f0e" name="Changes" comment="Initial 2">
+      <change afterPath="$PROJECT_DIR$/AntAlife.Logic/AntBrain.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AntAlife.Logic/Brain.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AntAlife.Logic/EnemyBrain.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AntAlife.Logic/IBrain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AntAlife/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AntAlife/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/Ant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Ant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/AntType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/AntType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/CellType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/CellType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/Egg.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Egg.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/Food.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Food.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/World.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Logic/AntAlife.Logic.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Logic/AntAlife.Logic.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Logic/Move.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Logic/WorldUpdater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Logic/WorldUpdater.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.UI/AntAlife.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.UI/AntAlife.UI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.UI/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.UI/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.UI/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.UI/MainWindow.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -61,16 +58,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    ".NET Project.AntAlife.UI.executor": "Run",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "IdeDpaAspPageId",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -79,7 +78,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Project.AntAlife.Domain">
+  <component name="RunManager" selected=".NET Project.AntAlife.UI">
     <configuration name="AntAlife.Common" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -182,15 +181,27 @@
       <workItem from="1744650480196" duration="5256000" />
       <workItem from="1744726624872" duration="11976000" />
       <workItem from="1744964192725" duration="1003000" />
-      <workItem from="1744978163343" duration="12083000" />
+      <workItem from="1744978163343" duration="24557000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial 2">
+      <option name="closed" value="true" />
+      <created>1744995010803</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744995010803</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Initial 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial 2" />
   </component>
 </project>

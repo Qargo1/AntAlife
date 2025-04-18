@@ -12,6 +12,11 @@ namespace AntAlife.Domain
         public int Defense { get; set; }
         public EntityState State { get; set; }
         public IEntity.Point Position { get; set; }
+        public int Energy { get; set; } // Текущая энергия
+        public int Speed { get; set; } // Скорость (тиков на ход)
+        public int MaxEnergy { get; set; } // Максимальная энергия
+
+
         
         protected Entity(Random random, int maxHp, int attack, int defense, int x, int y)
         {

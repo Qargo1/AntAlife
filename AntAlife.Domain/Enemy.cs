@@ -5,7 +5,6 @@ namespace AntAlife.Domain
     public class Enemy : Entity
     {
         public EnemyType EnemyType { get; set; }
-        public int Speed { get; set; } // Скорость движения (клеток за тик)
         public int AttackRange { get; set; } // Дальность атаки
         public int Regeneration { get; set; } // Регенерация здоровья за тик
 
@@ -18,31 +17,10 @@ namespace AntAlife.Domain
             Regeneration = GetRegeneration(enemyType);
         }
 
-        // Нахождение ближайшего муравья
-        public Ant FindNearestAnt(World world)
-        {
-            Ant nearest = null;
-            var minDistance = double.MaxValue;
-            foreach (var ant in world.Ants)
-            {
-                var dist = DistanceTo(ant);
-                if (!(dist < minDistance)) continue;
-                minDistance = dist;
-                nearest = ant;
-            }
-            return nearest;
-        }
-
         // Атака муравья
         public void AttackAnt(Ant ant, EnemyType enemyType)
         {
             ant.TakeDamage(GetAttack(enemyType), ant);
-        }
-
-        // Расстояние до другой сущности
-        public double DistanceTo(Entity other)
-        {
-            return Math.Sqrt(Math.Pow(Position.X - other.Position.X, 2) + Math.Pow(Position.Y - other.Position.Y, 2));
         }
 
         public int MaxHp(EnemyType enemyType)
