@@ -12,25 +12,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9049a9b1-0429-4d71-bf02-8f8a1c679f0e" name="Changes" comment="Initial 2">
-      <change afterPath="$PROJECT_DIR$/AntAlife.Logic/AntBrain.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Logic/Brain.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Logic/EnemyBrain.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AntAlife.Logic/IBrain.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AntAlife.Data/EntityStatItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/Enums/AntState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/Enums/PheromoneType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AntAlife.Domain/Enums/Season.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AntAlife.Logic/Instinct.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AntAlife.UI/StatsWindow.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AntAlife.UI/StatsWindow.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AntAlife/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AntAlife/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Common/AntAlife.Common.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Common/AntAlife.Common.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Data/AntAlife.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Data/AntAlife.Data.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntAlife.Domain/Ant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Ant.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/AntType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/AntType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/CellType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/CellType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/AntAlife.Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/AntAlife.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/AntType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Enums/AntType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/BeneficialCreature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Enums/BeneficialCreatureType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/Cell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Cell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/CellType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Enums/CellType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntAlife.Domain/Egg.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Egg.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntAlife.Domain/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/EnemyType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Enums/EnemyType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntAlife.Domain/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/EntityState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Enums/EntityState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntAlife.Domain/Food.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Food.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/FoodType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Enums/FoodType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/ICell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Interfaces/ICell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/IEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Interfaces/IEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Interfaces/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/ItemType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Enums/ItemType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/NeutralCreature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Enums/NeutralCreatureType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Domain/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntAlife.Domain/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Domain/World.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntAlife.Logic/AntAlife.Logic.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Logic/AntAlife.Logic.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AntAlife.Logic/Move.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Logic/AntBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Logic/AntBrain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Logic/Brain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Logic/Brain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AntAlife.Logic/EnemyBrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Logic/EnemyBrain.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntAlife.Logic/WorldUpdater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.Logic/WorldUpdater.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntAlife.UI/AntAlife.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.UI/AntAlife.UI.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntAlife.UI/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.UI/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AntAlife.UI/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AntAlife.UI/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +64,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -64,12 +87,13 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "IdeDpaAspPageId",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -182,6 +206,7 @@
       <workItem from="1744726624872" duration="11976000" />
       <workItem from="1744964192725" duration="1003000" />
       <workItem from="1744978163343" duration="24557000" />
+      <workItem from="1745162519633" duration="22347000" />
     </task>
     <task id="LOCAL-00001" summary="Initial 2">
       <option name="closed" value="true" />

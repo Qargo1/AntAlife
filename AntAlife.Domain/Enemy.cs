@@ -1,4 +1,6 @@
 ﻿using System;
+using AntAlife.Domain.Enums;
+
 
 namespace AntAlife.Domain
 {
@@ -18,14 +20,9 @@ namespace AntAlife.Domain
         }
 
         // Атака муравья
-        public void AttackAnt(Ant ant, EnemyType enemyType)
+        public static void AttackAnt(Ant ant, EnemyType enemyType)
         {
-            ant.TakeDamage(GetAttack(enemyType), ant);
-        }
-
-        public int MaxHp(EnemyType enemyType)
-        {
-            return GetMaxHp(enemyType);
+            ant.TakeDamage(GetAttack(enemyType));
         }
 
         // Характеристики по типу врага

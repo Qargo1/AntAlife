@@ -1,5 +1,6 @@
 ﻿using System;
-using AntAlife.Domain.Properties;
+using AntAlife.Domain.Enums;
+using AntAlife.Domain.Interfaces;
 
 namespace AntAlife.Domain
 {
@@ -14,6 +15,8 @@ namespace AntAlife.Domain
         public Item CarriedItem { get; set; } // Что несёт (еда, яйцо и т.д.)
         public int PatrolRadius { get; set; } // Радиус патрулирования (для солдат)
         public bool IsSick { get; set; }
+        public bool IsDead { get; set; }
+        public int MaxEggsInNest { get; set; }
         
         public Ant(Random random, int x, int y, AntType antType) : base(random, GetMaxHp(antType), GetAttack(antType), GetDefense(antType), x, y)
         {
@@ -21,6 +24,7 @@ namespace AntAlife.Domain
             Speed = GetSpeed(antType);
             CarryCapacity = GetCarryCapacity(antType);
             MaxEnergy = GetMaxEnergy(antType);
+            MaxHp = GetMaxHp(antType);
             Energy = MaxEnergy;
             ScentStrength = GetScentStrength(antType);
             CanDig = antType == AntType.Worker;
@@ -29,9 +33,9 @@ namespace AntAlife.Domain
             PatrolRadius = antType == AntType.Soldier ? 3 : 0;
         }
 
-        public void TakeDamage(int damage, Ant ant)
+        public void TakeDamage(int damage)
         {
-            ant.Hp -= damage;
+            Hp -= damage;
         }
         
         public void GetSick(Random random)
@@ -102,9 +106,15 @@ namespace AntAlife.Domain
             _ => 0
         };
 
-        public void SetEnergy(Ant ant, int value)
+        public void ConsumeEnergy(int value)
         {
-            ant.Energy -= value;
+            this.Energy -= value;
+        }
+
+        public bool CanAntCarry(Item item)
+        {
+            if (item.Weight > this.CarryCapacity) return false;
+            return item.Weight < this.CarryCapacity;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace AntAlife.Domain
+﻿namespace AntAlife.Domain.Enums
 {
     public enum EntityState
     {

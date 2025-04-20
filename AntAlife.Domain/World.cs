@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using AntAlife.Domain.Enums;
+using AntAlife.Domain.Interfaces;
 
 namespace AntAlife.Domain
 {
@@ -10,87 +12,83 @@ namespace AntAlife.Domain
         public int Height { get; }
         public Cell[,] Grid { get; }
         public List<Ant> Ants { get; set; }
-        public List<Food> FoodItems { get; set; }
         public List<Enemy> Enemies { get; set; }
+        public List<Item> Items { get; set; }
         public List<Egg> Eggs { get; set; }
+        public List<Food> FoodItems { get; set; }
         private bool IsRaining { get; set; }
-        public enum Season { Spring, Summer, Autumn, Winter }
         public Season CurrentSeason { get; set; }
         private int Day { get; set; }
         public int NestX { get; set; }
         public int NestY { get; set; }
         public int NestFood { get; set; }
+        public bool NestIsExisting  { get; set; }
         
+        // Флаг, что идет строительство
+        public bool IsNestUnderConstruction { get; private set; } = false;
+        // Текущий прогресс (сколько клеток построено)
+        public int CurrentNestRadius { get; private set; } = 0; // Текущий радиус построенного слоя
+        public int TargetNestRadius { get; private set; } = 10; // Целевой радиус (для ~20x20)
+        // Можно добавить константу для размера гнезда
+        private const int NestSize = 5; // Например, 5x5
+
         public World(int width, int height)
         {
             Width = width;
             Height = height;
             Grid = new Cell[width, height];
+            Ants = new List<Ant>();
+            Enemies = new List<Enemy>();
+            Items = new List<Item>();
+            Eggs = new List<Egg>();
+            FoodItems = new List<Food>();
+            IsRaining = false;
+            CurrentSeason = Season.Summer;
+            Day = 0;
+            NestIsExisting = false;
             
-            // Заполняем Soil по умолчанию
-            for (var x = 0; x < width; x++)
-            for (var y = 0; y < height; y++)
-                Grid[x, y] = new Cell(CellType.Soil, _random.Next(30, 100), x, y);
-
-            // Добавляем Ground на верхний ряд (поверхность)
-            for (var x = 0; x < width; x++)
-                Grid[x, 0].CellType = CellType.Ground;
-
-            // Стартовая Chamber для королевы (3x3 в верхнем левом углу)
-            for (var x = 0; x < 3 && x < width; x++)
-            for (var y = 0; y < 3 && y < height; y++)
-                Grid[x, y].CellType = CellType.Chamber;
-
-            // Случайные StoneBlock (5-10% клеток)
-            var stoneCount = _random.Next(width * height / 20, width * height / 10);
-            for (var i = 0; i < stoneCount; i++)
+            // 1. Basic Grid initialization
+            for (var i = 0; i < Width; i++)
             {
-                var x = _random.Next(width);
-                var y = _random.Next(height);
-                if (Grid[x, y].CellType != CellType.Chamber) // Не перекрываем Chamber
-                    Grid[x, y].CellType = CellType.StoneBlock;
+                for (var j = 0; j < Height; j++)
+                {
+                    Grid[i, j] = new Cell(CellType.Unexplored, i, j);
+                }
             }
             
-            // Случайные Tunnel (2-5% клеток)
-            var tunnelCount = _random.Next(width * height / 50, width * height / 20);
-            for (var i = 0; i < tunnelCount; i++)
-            {
-                var x = _random.Next(width);
-                var y = _random.Next(height);
-                if (Grid[x, y].CellType != CellType.Chamber && Grid[x, y].CellType != CellType.Ground)
-                    Grid[x, y].CellType = CellType.Tunnel;
-            }
-
-            // Преобразуем Tunnel на границах в Exit
-            for (var x = 0; x < width; x++)
-            for (var y = 0; y < height; y++)
-                if (Grid[x, y].CellType == CellType.Tunnel &&
-                    (x == 0 || x == width - 1 || y == 0 || y == height - 1))
-                    Grid[x, y].CellType = CellType.Exit;
-            
-            NestX = 1;
-            NestY = 1;
-            Ants = new List<Ant> { new Ant(_random, NestX, NestY, AntType.Queen) };
-            Enemies = new List<Enemy> { new Enemy(_random, 10, 10, EnemyType.Spider) };
-            FoodItems = new List<Food> { new Food(5, 5), new Food(15, 15) };
-            Eggs = new List<Egg> { new Egg(_random, 2, 2) { HatchTime = 10 } };
+            // 2. Adding queen
+            Ants.Add(new Ant(_random, width / 2, height / 2, AntType.Queen));
         }
         
-        public void UpdateWeather(Random random)
+        // Проверяет, можно ли двигаться на клетку
+        public bool IsValidCoordinate(int x, int y)
         {
-            IsRaining = random.Next(0, 100) < 10; // 10% шанс дождя
-            if (!IsRaining) return;
-            foreach (var cell in Grid)
-            {
-                if (cell.CellType == CellType.Tunnel && random.Next(0, 100) < 20)
-                    cell.CellType = CellType.Flooded;
-            }
+            return x >= 0 && x < Width && y >= 0 && y < Height;
         }
         
-        public void UpdateSeason()
+        public void StartNestConstruction(int centerX, int centerY)
         {
-            Day++;
-            CurrentSeason = (Season)((Day % 360) / 90); // 90 дней на сезон
+            if (IsNestUnderConstruction) return;
+            IsNestUnderConstruction = true;
+            NestX = centerX;
+            NestY = centerY;
+            CurrentNestRadius = 1; // Начинаем с радиуса 1 (камера)
+            NestIsExisting = false; // Сброс флага при начале новой стройки
+            Console.WriteLine($"World: Starting layered nest construction at ({centerX},{centerY}). Target radius: {TargetNestRadius}");
+        }
+        
+        public void IncrementNestRadius() // Вызывается апдейтером
+        {
+            if (IsNestUnderConstruction) CurrentNestRadius++;
+        }
+
+        // 6. Метод для ЗАВЕРШЕНИЯ строительства (вызывается из WorldUpdater)
+        public void FinishNestConstruction()
+        {
+            Console.WriteLine($"World: Nest finished. Final radius reached: {CurrentNestRadius - 1}.");
+            IsNestUnderConstruction = false;
+            CurrentNestRadius = 0;
+            NestIsExisting = true; // Гнездо готово!
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using AntAlife.Domain.Enums;
+using AntAlife.Domain.Interfaces;
 
 namespace AntAlife.Domain
 {
@@ -15,8 +17,7 @@ namespace AntAlife.Domain
         public int Energy { get; set; } // Текущая энергия
         public int Speed { get; set; } // Скорость (тиков на ход)
         public int MaxEnergy { get; set; } // Максимальная энергия
-
-
+        public static int MaxHp { get; set; } // Максимальная энергия
         
         protected Entity(Random random, int maxHp, int attack, int defense, int x, int y)
         {

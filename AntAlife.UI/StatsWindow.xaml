@@ -1,0 +1,74 @@
+﻿<Window x:Class="AntAlife.UI.StatsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AntAlife.UI"
+        mc:Ignorable="d"
+        Title="AntAlife Statistics" Height="600" Width="450"
+        WindowStyle="ToolWindow"
+        ShowInTaskbar="False">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- Для общей статистики -->
+            <RowDefinition Height="*"/>    <!-- Для таблицы существ -->
+        </Grid.RowDefinitions>
+
+        <!-- Общая статистика -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock FontWeight="Bold" FontSize="14" Text="World State"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Tick: "/>
+                <TextBlock Text="{Binding Tick}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Ants: "/>
+                <TextBlock Text="{Binding AntCount}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Enemies: "/>
+                <TextBlock Text="{Binding EnemyCount}"/>
+            </StackPanel>
+             <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Eggs: "/>
+                <TextBlock Text="{Binding EggCount}"/>
+            </StackPanel>
+             <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Food Items: "/>
+                <TextBlock Text="{Binding FoodItemCount}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Nest Food: "/>
+                <TextBlock Text="{Binding NestFood}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Nest Built: "/>
+                <TextBlock Text="{Binding IsNestBuilt}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Статистика по существам -->
+        <GroupBox Grid.Row="1" Header="Entities">
+            <DataGrid ItemsSource="{Binding Entities}"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="Auto"/>
+                    <!-- <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto"/> --> <!-- Можно раскомментировать ID -->
+                    <DataGridTextColumn Header="State" Binding="{Binding State}" Width="Auto"/>
+                    <DataGridTextColumn Header="Pos" Binding="{Binding Position}" Width="Auto"/>
+                    <DataGridTextColumn Header="HP" Binding="{Binding HP}" Width="Auto"/>
+                    <DataGridTextColumn Header="Energy" Binding="{Binding Energy}" Width="Auto"/>
+                    <DataGridTextColumn Header="Item" Binding="{Binding CarriedItem}" Width="Auto"/>
+                    <DataGridTextColumn Header="Atk" Binding="{Binding Attack}" Width="Auto"/>
+                    <DataGridTextColumn Header="Def" Binding="{Binding Defense}" Width="Auto"/>
+                    <!-- Можно добавить MaxHP, MaxEnergy и другие колонки -->
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+    </Grid>
+</Window>

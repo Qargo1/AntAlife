@@ -1,4 +1,4 @@
-﻿namespace AntAlife.Domain.Properties
+﻿namespace AntAlife.Domain.Enums
 {
     public enum ItemType
     {

@@ -1,4 +1,4 @@
-﻿namespace AntAlife.Domain
+﻿namespace AntAlife.Domain.Enums
 {
     // Стратег (Strategist): Планирует действия колонии, усиливает эффективность других муравьёв.
     public enum AntType

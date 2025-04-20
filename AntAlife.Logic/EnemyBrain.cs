@@ -15,13 +15,13 @@ namespace AntAlife.Logic
         public override void Act(World world, Random random)
         {
             _enemy.Hp += _enemy.Regeneration;
-            if (_enemy.Hp > _enemy.MaxHp(_enemy.EnemyType))
-                _enemy.Hp = _enemy.MaxHp(_enemy.EnemyType);
+            if (_enemy.Hp > Entity.MaxHp)
+                _enemy.Hp = Entity.MaxHp;
 
             var target = FindNearestAnt(world);
             if (target != null && DistanceTo(_enemy, target) <= _enemy.AttackRange)
             {
-                _enemy.AttackAnt(target, _enemy.EnemyType);
+                Enemy.AttackAnt(target, _enemy.EnemyType);
             }
             else
             {

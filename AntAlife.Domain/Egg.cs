@@ -1,5 +1,6 @@
 ﻿using System;
-using AntAlife.Domain.Properties;
+using AntAlife.Domain.Enums;
+using AntAlife.Domain.Interfaces;
 
 namespace AntAlife.Domain
 {

@@ -5,7 +5,7 @@
     // Крот (Mole): Роет случайные туннели, иногда помогая, а иногда разрушая.
     // Лягушка (Frog): Ест мелких врагов, но не трогает муравьёв.
     
-    public enum NeutralCreature
+    public enum NeutralCreatureType
     {
         Firefly, Snail, Frog, Mole
     }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AntAlife.Domain
+namespace AntAlife.Domain.Interfaces
 {
     public interface IEntity
     {

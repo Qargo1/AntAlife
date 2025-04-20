@@ -1,7 +1,7 @@
 ﻿using System;
-using AntAlife.Domain.Properties;
+using AntAlife.Domain.Enums;
 
-namespace AntAlife.Domain
+namespace AntAlife.Domain.Interfaces
 {
     public abstract class Item : Entity
     {
